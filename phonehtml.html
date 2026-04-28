@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حذيفة ستور - متجر الهواتف الذكية</title>
+    <!-- خط Cairo -->
+    <link href="https://cdn.fontsource.com/cairo/400-700.css" rel="stylesheet">
+    <!-- ملف الـ CSS -->
+    <link rel="stylesheet" href="phoncss.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">📱</div>
+                <span class="logo-text">حذيفة ستور</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">الرئيسية</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#offers">العروض</a></li>
+                <li><a href="#reviews">التقييمات</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>أحدث <span>الهواتف الذكية</span> بأفضل الأسعار</h1>
+                <p>اكتشف مجموعة واسعة من الهواتف الذكية من أفضل العلامات التجارية العالمية مع ضمان الجودة والتوصيل السريع</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">تسوق الآن ←</a>
+                    <a href="#offers" class="btn btn-outline">عروض اليوم</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>منتج متوفر</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10K+</h3>
+                        <p>عميل سعيد</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>دعم فني</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://placehold.co/320x640/1a73e8/white?text=Phone" alt="هاتف ذكي" class="hero-phone-img">
+                <div class="hero-badge">
+                    <div class="badge-icon">⚡</div>
+                    <div class="badge-text">شحن سريع</div>
+                </div>
+                <div class="hero-badge">
+                    <div class="badge-icon">🔒</div>
+                    <div class="badge-text">ضمان سنتين</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES BAR -->
+    <div class="features-bar">
+        <div class="features-container">
+            <div class="feature-item">
+                <div class="feature-icon">🚚</div>
+                <div class="feature-text">
+                    <h4>توصيل مجاني</h4>
+                    <p>للطلبات أكثر من 500 ريال</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🔄</div>
+                <div class="feature-text">
+                    <h4>إرجاع مجاني</h4>
+                    <p>خلال 14 يوم</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-text">
+                    <h4>ضمان رسمي</h4>
+                    <p>ضمان لمدة سنتين</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💳</div>
+                <div class="feature-text">
+                    <h4>دفع آمن</h4>
+                    <p>طرق دفع متعددة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section class="section" id="categories">
+        <div class="section-header">
+            <h2>تصفح حسب الفئة</h2>
+            <p>اختر الفئة المناسبة لك واستعرض أحدث المنتجات</p>
+            <div class="section-line"></div>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card active" onclick="filterProducts('all')">
+                <span class="category-icon">📱</span>
+                <h3>جميع الهواتف</h3>
+                <p>+500 منتج</p>
+            </div>
+            <div class="category-card" onclick="filterProducts('apple')">
+                <span class="category-icon">🍎</span>
+                <h3>آبل</h3>
+                <p>آيفون 15 برو</p>
+            </div>
+            <div class="category-card" onclick="filterProducts('samsung')">
+                <span class="category-icon">⭐</span>
+                <h3>سامسونج</h3>
+                <p>جالكسي S24</p>
+            </div>
+            <div class="category-card" onclick="filterProducts('accessories')">
+                <span class="category-icon">🎧</span>
+                <h3>الإكسسوارات</h3>
+                <p>سماعات وشواحن</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products-section" id="products">
+        <div class="section">
+            <div class="section-header">
+                <h2>منتجاتنا المميزة</h2>
+                <p>أحدث الهواتف الذكية والإكسسوارات بأفضل الأسعار</p>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-tab active" onclick="filterByTab(this, 'all')">الكل</button>
+                <button class="filter-tab" onclick="filterByTab(this, 'apple')">آبل</button>
+                <button class="filter-tab" onclick="filterByTab(this, 'samsung')">سامسونج</button>
+                <button class="filter-tab" onclick="filterByTab(this, 'xiaomi')">شاومي</button>
+                <button class="filter-tab" onclick="filterByTab(this, 'accessories')">إكسسوارات</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIAL OFFER -->
+    <section class="offer-section" id="offers">
+        <div class="offer-card">
+            <div class="offer-content">
+                <h3>🔥 عرض خاص محدود</h3>
+                <h2>آيفون 15 برو ماكس</h2>
+                <p>احصل على أقوى هاتف من آبل بخصم يصل إلى 25% مع هدية مجانية! العرض لفترة محدودة فقط.</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="number" id="days">00</span>
+                        <span class="label">يوم</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="number" id="hours">00</span>
+                        <span class="label">ساعة</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="number" id="minutes">00</span>
+                        <span class="label">دقيقة</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="number" id="seconds">00</span>
+                        <span class="label">ثانية</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary" onclick="addToCartById(1)">أضف للسلة الآن 🛒</a>
+            </div>
+            <div class="offer-image">
+                <img src="https://placehold.co/280x560/1a73e8/white?text=iPhone+15" alt="آيفون 15 برو ماكس">
+                <div class="offer-price-tag">
+                    <div class="discount">خصم 25%</div>
+                    <div class="price">4,499 ر.س</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <h2>تواصل معنا</h2>
+            <p>نحن هنا لمساعدتك. لا تتردد في التواصل معنا</p>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h4>العنوان</h4>
+                        <p>شارع الملك فهد، الرياض، المملكة العربية السعودية</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h4>الهاتف</h4>
+                        <p dir="ltr">+966 50 123 4567</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h4>البريد الإلكتروني</h4>
+                        <p>info@techstore.sa</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <div class="contact-details">
+                        <h4>ساعات العمل</h4>
+                        <p>السبت - الخميس: 9 ص - 11 م</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm" action="process.php" method="POST">
+                <h3>أرسل لنا رسالة</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>الاسم الكامل</label>
+                        <input type="text" name="name" placeholder="أدخل اسمك" required>
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" name="email" placeholder="example@email.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>الموضوع</label>
+                    <select name="subject" required>
+                        <option value="">اختر الموضوع</option>
+                        <option>استفسار عن منتج</option>
+                        <option>متابعة طلب</option>
+                        <option>إرجاع أو استبدال</option>
+                        <option>شكوى أو اقتراح</option>
+                        <option>أخرى</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>الرسالة</label>
+                    <textarea name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">إرسال الرسالة 📨</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <div class="logo-icon">📱</div>
+                    <span class="logo-text">تك ستور</span>
+                </a>
+                <p>متجرك الموثوق لأحدث الهواتف الذكية والإكسسوارات. نقدم لك أفضل المنتجات بأسعار منافسة مع ضمان الجودة.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">𝕏</a>
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">▶️</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#products">المنتجات</a></li>
+                    <li><a href="#offers">العروض</a></li>
+                    <li><a href="#reviews">التقييمات</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>الفئات</h4>
+                <ul>
+                    <li><a href="#">هواتف آبل</a></li>
+                    <li><a href="#">هواتف سامسونج</a></li>
+                    <li><a href="#">هواتف شاومي</a></li>
+                    <li><a href="#">سماعات</a></li>
+                    <li><a href="#">شواحن وكابلات</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>المساعدة</h4>
+                <ul>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">شروط الاستخدام</a></li>
+                    <li><a href="#">سياسة الإرجاع</a></li>
+                    <li><a href="#">الأسئلة الشائعة</a></li>
+                    <li><a href="#">تتبع الطلب</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 تك ستور. جميع الحقوق محفوظة</p>
+            <div class="payment-methods">
+                <span class="payment-icon">VISA</span>
+                <span class="payment-icon">MASTERCARD</span>
+                <span class="payment-icon">APPLE PAY</span>
+                <span class="payment-icon">مدى</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 سلة التسوق</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty" id="cartEmpty">
+                <div class="empty-icon">🛒</div>
+                <h4>السلة فارغة</h4>
+                <p>أضف بعض المنتجات لتبدأ التسوق</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-totals">
+                <div class="cart-total-row">
+                    <span>المجموع الفرعي</span>
+                    <span id="subtotal">0 ر.س</span>
+                </div>
+                <div class="cart-total-row">
+                    <span>التوصيل</span>
+                    <span id="shipping">مجاني</span>
+                </div>
+                <div class="cart-total-row total">
+                    <span>الإجمالي</span>
+                    <span id="totalPrice">0 ر.س</span>
+                </div>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">إتمام الشراء 💳</button>
+        </div>
+    </div>
+
+    <!-- PRODUCT MODAL -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- ملف الـ JavaScript -->
+    <script src="phonejs.js"></script>
+</body>
+</html>
